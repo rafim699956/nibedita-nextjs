@@ -1,5 +1,5 @@
 
-import TabBtn from "./TabBtn";
+import TabBtn from "./Tabsection";
 
 const WhoWeAre = ({clildren}) => {
    

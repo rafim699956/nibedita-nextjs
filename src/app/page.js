@@ -3,12 +3,19 @@ import WhoWeAre from "./components/WhoWeAre";
 import tabimg1 from "../../public/tabimg1.png";
 import tabimg2 from "../../public/blogimg1.png";
 import tabimg3 from "../../public/blogimg2.png";
-import TabBtn from "./components/TabBtn";
 import OurConcern from "./components/OurConcern";
 import HistoryNibedita from "./components/HistoryNibedita";
 import OurTeamMember from "./components/OurTeamMember";
 import LatestNews from "./components/LatestNews";
 import ContactUs from "./components/ContactUs";
+import HomeHero from "./components/HomeHero";
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// ScrollSmoother requires ScrollTrigger
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+
+gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
 export default function Home() {
   const whoWeAre = {
@@ -66,12 +73,13 @@ export default function Home() {
   }
   return (
     <>
-      <WhoWeAre>
+    <HomeHero/>
+      {/* <WhoWeAre>
         <div className="flex flex-col lg:flex-row gap-9">
           <div className="inline-flex flex-col gap-3 max-w-[18.563rem] w-full shrink-0">
             {whoWeAre.navTabs.tabBtn &&
               whoWeAre.navTabs.tabBtn.map((btn) => (
-                <TabBtn label={btn.label} key={btn.id}>{btn.label}</TabBtn>
+              <Tabsection/>
               ))}
           </div>
           <div className="grow flex flex-col gap-6">
@@ -99,12 +107,12 @@ export default function Home() {
               ))}
           </div>
         </div>
-      </WhoWeAre>
+      </WhoWeAre> */}
       <OurConcern />
       <HistoryNibedita />
-      <OurTeamMember/>
-      <LatestNews/>
-      <ContactUs/>
+      <OurTeamMember />
+      <LatestNews />
+      <ContactUs />
     </>
   );
 }
