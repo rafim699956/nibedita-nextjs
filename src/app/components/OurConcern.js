@@ -7,6 +7,7 @@ import blogImg2 from "../../../public/blogimg2.png";
 import blogImg3 from "../../../public/blogimg3.png";
 import blogImg4 from "../../../public/blogimg4.png";
 import SectionTitle from "./SectionTitle";
+import OurConcernAnimation from "./OurConcernAnimation";
 
 const OurConcern = () => {
     const OurConcern = {
@@ -48,7 +49,7 @@ const OurConcern = () => {
                         OurConcern.blogPosts.map((item) => (
                             <div
                                 key={item.id}
-                                className="p-5 lg:p-10 bg-white rounded-2xl flex flex-col md:flex-row items-center gap-6 lg:gap-10 md:even:flex-row-reverse"
+                                className="p-5 lg:p-10 bg-white rounded-2xl flex flex-col md:flex-row items-center gap-6 lg:gap-10 md:even:flex-row-reverse our-concern-item"
                             >
                                 <div className="w-full md:max-w-[38.61%] shrink-0">
                                     <Image className="w-full max-w-full object-cover" src={item.img}
@@ -65,6 +66,7 @@ const OurConcern = () => {
                         ))}
                 </div>
             </div>
+            <OurConcernAnimation />
         </section>
     );
 };

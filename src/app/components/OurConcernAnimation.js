@@ -1,20 +1,18 @@
 "use client";
-import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
-
-const AnimateSectionTitle = () => {
+const OurConcernAnimation = () => {
     useEffect(() => {
-        const elements = gsap.utils.toArray(".fade-up");
-        elements.forEach((el) => {
-            gsap.from(el, {
+        gsap.utils.toArray(".our-concern-item").forEach((item) => {
+            gsap.from(item, {
                 y: 80,
                 opacity: 0,
-                duration: 1,
+                duration: 0.8,
                 ease: "power3.out",
                 scrollTrigger: {
-                    trigger: el,
+                    trigger: item,
                     start: "top 80%",
                     toggleActions: "play reverse play reverse",
                     scrub: true
@@ -25,4 +23,4 @@ const AnimateSectionTitle = () => {
     return null;
 };
 
-export default AnimateSectionTitle;
+export default OurConcernAnimation;

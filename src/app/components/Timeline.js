@@ -1,3 +1,5 @@
+import TimelineAnimation from "./TimelineAnimation";
+
 const Timeline = () => {
     const timeLine = [
         { id: 1, year: "1975", text: "Founding CWFP to address the demanding societal needs." },
@@ -12,7 +14,7 @@ const Timeline = () => {
     const lastIndex = timeLine[timeLine.length - 1];
     return (
         <div className="relative lg:max-w-285 w-full mx-auto">
-            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-px h-full bg-[linear-gradient(180deg,#F8F8F8_-3.16%,#9D5DA3_54.35%,#F8F8F8_104.33%)]"></div>
+            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-px bg-[linear-gradient(180deg,#F8F8F8_-3.16%,#9D5DA3_54.35%,#F8F8F8_104.33%)] timeline-middle-line"></div>
             <div className="space-y-6">
                 {timeLine.map((item, index) => {
                     const even = index % 2 === 0;
@@ -23,7 +25,7 @@ const Timeline = () => {
                                 } ${lastIndex.id === item.id ? "pb-8 md:pb-10 lg:pb-[4.813rem]" : ""
                                 } ${even ? "flex-row-reverse" : "flex-row"}`}
                         >
-                            <div className="w-full md:w-1/2 flex flex-col gap-4 md:gap-6">
+                            <div className={`w-full md:w-1/2 flex flex-col gap-4 md:gap-6 ${item.id % 2 === 0 ? "timeline-item-left" : "timeline-item-right"}`}>
                                 <div
                                     className={`flex items-center transform -translate-x-2 ${even
                                         ? "md:flex-row md:-translate-x-2"
@@ -48,6 +50,7 @@ const Timeline = () => {
                     );
                 })}
             </div>
+            <TimelineAnimation />
         </div>
     )
 }
