@@ -5,6 +5,7 @@ import teamMember3 from "../../../public/teamMember3.png";
 import teamMember4 from "../../../public/teamMember4.png";
 import Link from "next/link";
 import Image from "next/image";
+import SectionTitle from "./SectionTitle";
 
 const OurTeamMember = () => {
   const OurTeamMember = {
@@ -41,10 +42,7 @@ const OurTeamMember = () => {
   return (
     <section className="bg-white">
       <div className="container space-y-8 lg:space-y-14">
-        <div className="lg:max-w-195.5 text-center mx-auto space-y-4">
-          <h2>{OurTeamMember.sectionTitle}</h2>
-          <p>{OurTeamMember.sectionDes}</p>
-        </div>
+        <SectionTitle title={OurTeamMember.sectionTitle} description={OurTeamMember.sectionDes} />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {OurTeamMember.teamMembers &&
             OurTeamMember.teamMembers.map((item) => (

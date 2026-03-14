@@ -6,6 +6,7 @@ import blogImg1 from "../../../public/blogimg1.png";
 import blogImg2 from "../../../public/blogimg2.png";
 import blogImg3 from "../../../public/blogimg3.png";
 import blogImg4 from "../../../public/blogimg4.png";
+import SectionTitle from "./SectionTitle";
 
 const OurConcern = () => {
     const OurConcern = {
@@ -41,12 +42,7 @@ const OurConcern = () => {
     return (
         <section className="bg-primary-950">
             <div className="container space-y-6 md:space-y-8 lg:space-y-14">
-                <div className="lg:max-w-[51.813rem] mx-auto text-center space-y-4">
-                    <h2 className="text-white">{OurConcern.sectionTitle}</h2>
-                    <p className="text-[#E5E5E5] lg:text-[1.25rem] lg:leading-8">
-                        {OurConcern.sectionDes}
-                    </p>
-                </div>
+                <SectionTitle title={OurConcern.sectionTitle} description={OurConcern.sectionDes} varient="white" />
                 <div className="space-y-4 md:space-y-6 lg:space-y-8 lg:max-w-265 mx-auto">
                     {OurConcern.blogPosts &&
                         OurConcern.blogPosts.map((item) => (

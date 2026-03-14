@@ -31,13 +31,13 @@ const Timeline = () => {
                                         }`}
                                 >
                                     <div className="size-4 bg-white rounded-full border border-primary-600"></div>
-                                    <div className="border-t border-t-primary-600 w-16"></div>
+                                    <div className="border-t border-t-primary-600 w-8 lg:w-16"></div>
                                     <p className="py-2 px-4 border border-primary-600 rounded-full bg-[#F6EFF8] text-base font-medium text-primary-950 h-10">
                                         {item.year}
                                     </p>
                                 </div>
                                 <h5
-                                    className={`text-secondary-950 pl-17.5 md:pl-0 ${even ? "md:pl-17.5" : "md:pr-17.5"
+                                    className={`text-secondary-950 pl-8 md:pl-0 ${even ? "md:pl-17.5" : "md:pr-17.5"
                                         }`}
                                 >
                                     {item.text}

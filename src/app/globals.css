@@ -15,7 +15,6 @@
 }
 
 @layer base {
-
   h1,
   .h1 {
     @apply font-outfit font-semibold text-[1.75rem] leading-9 md:text-[2.5rem] md:leading-12 lg:text-[3.5rem] lg:leading-17 text-secondary-900;
@@ -46,10 +45,18 @@
     @apply font-outfit font-medium text-base leading-5 md:text-lg md:leading-6 lg:text-[1.25rem] lg:leading-6 text-secondary-900;
   }
 
+  img {
+    @apply w-full max-w-full h-auto object-cover;
+  }
+
+  button {
+    @apply cursor-pointer;
+  }
+
   body,
   p,
   a {
-    @apply font-outfit font-normal text-sm leading-5 md:text-base md:leading-6 lg:text-base lg:leading-6 text-secondary-700 scroll-smooth;
+    @apply font-outfit font-normal text-sm leading-5 md:text-base md:leading-6 lg:text-base lg:leading-6 text-secondary-700;
   }
 
   a {
@@ -76,6 +83,7 @@
   .custom-pagination .swiper-pagination-bullet {
     @apply size-4 border border-[#B579BC] bg-primary-100 inline-block rounded-full mr-2.5 opacity-30;
   }
+
   .custom-pagination .swiper-pagination-bullet-active {
     @apply bg-white opacity-100;
   }

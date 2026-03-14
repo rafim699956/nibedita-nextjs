@@ -97,7 +97,7 @@ const HomeHero = () => {
                                         </div>
                                         <div>
                                             <Link
-                                                className="py-2 lg:py-4 px-5 lg:px-9 bg-white rounded-[2.75rem] inline-flex items-center gap-2 text-sm leading-5.5 lg:text-lg lg:leading-6.5 font-medium"
+                                                className="py-2 lg:py-4 px-5 lg:px-9 bg-white rounded-lg inline-flex items-center gap-2 text-sm leading-5.5 lg:text-lg lg:leading-6.5 font-medium transition-all duration-300 ease-linear hover:bg-secondary hover:text-primary-600"
                                                 href={item.path}
                                             >
                                                 Know More

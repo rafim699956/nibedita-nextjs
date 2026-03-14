@@ -77,10 +77,9 @@ const Header = () => {
                                 </li>
                             ))}
                         </ul>
-                        <div className="w-full h-0.5 lg:w-0.5 lg:h-8 bg-border lg:ml-4.5 lg:mr-8"></div>
                         <div>
                             <Link
-                                className="py-3 px-6 bg-primary-600 rounded-full inline-flex items-center gap-2 text-white font-medium text-base"
+                                className="py-3 px-6 bg-primary-600 rounded-lg inline-flex items-center gap-2 text-white font-medium text-base hover:bg-secondary hover:text-primary-100 transition-all duration-300 ease-linear"
                                 href="/contact-us"
                             >
                                 Contact Us <FaArrowRightLong className="text-2xl" />

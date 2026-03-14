@@ -1,5 +1,6 @@
 import React from 'react'
 import Timeline from './Timeline'
+import SectionTitle from './SectionTitle'
 
 const HistoryNibedita = () => {
     const HistoryNibedita = {
@@ -10,10 +11,7 @@ const HistoryNibedita = () => {
     return (
         <section className="bg-[#FBF7FC]">
             <div className="container space-y-6 md:space-y-10 lg:space-y-14">
-                <div className="lg:max-w-195.5 mx-auto space-y-4">
-                    <h2 className="text-center text-secondary-950">{HistoryNibedita.sectionTitle}</h2>
-                    <p className="text-center lg:text-xl lg:leading-8 text-black">{HistoryNibedita.sectionDes}</p>
-                </div>
+                <SectionTitle title={HistoryNibedita.sectionTitle} description={HistoryNibedita.sectionDes} />
                 <Timeline />
             </div>
         </section>

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react'
 import { FaSquareXTwitter, FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import Form from './Form';
+import SectionTitle from './SectionTitle';
 
 const ContactUs = () => {
     const ContactUs = {
@@ -16,10 +17,7 @@ const ContactUs = () => {
     return (
         <section className="bg-primary-600">
       <div className="lg:max-w-291! container space-y-6 md:space-y-10 lg:space-y-14">
-        <div className="max-w-195.5 mx-auto text-center space-y-4">
-          <h2 className="text-white">{ContactUs.sectionTitle}</h2>
-          <p className="text-white text-xl leading-8">{ContactUs.sectionDes}</p>
-        </div>
+        <SectionTitle title={ContactUs.sectionTitle} description={ContactUs.sectionDes} />
         <div className="flex flex-wrap gap-6">
           <div className="flex flex-col lg:flex-row gap-6 w-full lg:justify-between">
             <Form/>

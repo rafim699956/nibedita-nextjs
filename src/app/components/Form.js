@@ -2,26 +2,26 @@
 import React, { useState } from 'react'
 import { FaArrowRightLong } from 'react-icons/fa6';
 const Form = () => {
-     const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(
-      addFromData({
-        id: crypto.randomUUID(),
-        name,
-        email,
-        subject,
-        message,
-      })
-    );
-    setName("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
-  };
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(
+            addFromData({
+                id: crypto.randomUUID(),
+                name,
+                email,
+                subject,
+                message,
+            })
+        );
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+    };
     return (
         <form
             className="bg-white p-6 pb-8 md:p-8 md:pb-9 lg:p-10 lg:pb-12 border border-[#E0C3E4] rounded-xl inline-flex flex-col gap-6 w-full lg:max-w-163.5 lg:flex-1"
@@ -72,7 +72,7 @@ const Form = () => {
             </div>
             <div className="mt-4">
                 <button
-                    className="py-6 px-8 rounded-full bg-primary-600 text-white cursor-pointer flex items-center gap-2 text-lg leading-none font-semibold"
+                    className="py-6 px-8 rounded-lg bg-primary-600 text-white cursor-pointer flex items-center gap-2 text-lg leading-none font-semibold transition-all duration-300 ease-linear hover:bg-secondary hover:text-primary-100"
                     type="submit"
                 >
                     Send Message <FaArrowRightLong className="text-2xl" />
