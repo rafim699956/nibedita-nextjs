@@ -24,7 +24,7 @@ const Form = () => {
     };
     return (
         <form
-            className="bg-white p-6 pb-8 md:p-8 md:pb-9 lg:p-10 lg:pb-12 border border-[#E0C3E4] rounded-xl inline-flex flex-col gap-6 w-full lg:max-w-163.5 lg:flex-1"
+            className="bg-white p-6 pb-8 md:p-8 md:pb-9 lg:p-10 lg:pb-12 border border-[#E0C3E4] rounded-xl inline-flex flex-col gap-6 w-full lg:max-w-163.5 lg:flex-1 contact-form"
             onSubmit={(e) => handleSubmit(e)}
         >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">

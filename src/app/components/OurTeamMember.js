@@ -6,6 +6,7 @@ import teamMember4 from "../../../public/teamMember4.png";
 import Link from "next/link";
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
+import TeamMemberAnimation from "./TeamMemberAnimation";
 
 const OurTeamMember = () => {
   const OurTeamMember = {
@@ -43,12 +44,12 @@ const OurTeamMember = () => {
     <section className="bg-white">
       <div className="container space-y-8 lg:space-y-14">
         <SectionTitle title={OurTeamMember.sectionTitle} description={OurTeamMember.sectionDes} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 team-member-wrapper">
           {OurTeamMember.teamMembers &&
             OurTeamMember.teamMembers.map((item) => (
               <div
                 key={item.id}
-                className="min-h-105.5 relative rounded-lg overflow-hidden bg-[#0C0C0C] bg-no-repeat bg-cover bg-blend-luminosity"
+                className="min-h-105.5 relative rounded-lg overflow-hidden bg-[#0C0C0C] bg-no-repeat bg-cover bg-blend-luminosity team-member-item"
               >
                 <Image className="absolute" src={item.img} alt={item.memberName} width={297} height={422} />
                 <div className="absolute w-full h-47 bottom-0 left-0 right-0 bg-[linear-gradient(179.4deg,rgba(217,217,217,0)_0.52%,#000000_82.38%)] z-10"></div>
@@ -69,6 +70,7 @@ const OurTeamMember = () => {
             ))}
         </div>
       </div>
+      <TeamMemberAnimation />
     </section>
   );
 };

@@ -3,25 +3,26 @@ import React from 'react'
 import { FaSquareXTwitter, FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import Form from './Form';
 import SectionTitle from './SectionTitle';
+import ContactSectionAnimation from './ContactSectionAnimation';
 
 const ContactUs = () => {
-    const ContactUs = {
-        sectionTitle: "Contact us",
-        sectionDes:
-            "Feel free to reach out with any questions about our services. You can contact us via email, phone, or visit us directly.",
-        formContactUs: [],
-        address: "Office address full goes here, dhaka, banglade",
-        contactNum: +8801717324664,
-        ourEmail: "uremail@email.com",
-    };
-    return (
-        <section className="bg-primary-600">
+  const ContactUs = {
+    sectionTitle: "Contact us",
+    sectionDes:
+      "Feel free to reach out with any questions about our services. You can contact us via email, phone, or visit us directly.",
+    formContactUs: [],
+    address: "Office address full goes here, dhaka, banglade",
+    contactNum: +8801717324664,
+    ourEmail: "uremail@email.com",
+  };
+  return (
+    <section className="bg-primary-600 contact-us-section">
       <div className="lg:max-w-291! container space-y-6 md:space-y-10 lg:space-y-14">
         <SectionTitle title={ContactUs.sectionTitle} description={ContactUs.sectionDes} />
         <div className="flex flex-wrap gap-6">
           <div className="flex flex-col lg:flex-row gap-6 w-full lg:justify-between">
-            <Form/>
-            <div className="bg-white py-8 px-4 lg:py-10 lg:px-6 rounded-xl border border-[#E0C3E4] w-full lg:flex-1 lg:max-w-113.5 divide-y divider-[#E5E5E5] space-y-5">
+            <Form />
+            <div className="bg-white py-8 px-4 lg:py-10 lg:px-6 rounded-xl border border-[#E0C3E4] w-full lg:flex-1 lg:max-w-113.5 divide-y divider-[#E5E5E5] space-y-5 contact-info">
               <div className="px-4 pb-5 space-y-4">
                 <FaYoutube className="text-2xl text-primary-600" />
                 <div className="space-y-1">
@@ -77,7 +78,7 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
-          <div className="w-full rounded-xl overflow-hidden">
+          <div className="w-full rounded-xl overflow-hidden map">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.5802250977913!2d90.43197577589736!3d23.76234418831673!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b80a76b70127%3A0x1551dab4feda6614!2sConcerned%20Women%20For%20Family%20Development%20(CWFD)!5e0!3m2!1sen!2sbd!4v1766406899203!5m2!1sen!2sbd"
               width="100%"
@@ -87,8 +88,9 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+      <ContactSectionAnimation />
     </section>
-    )
+  )
 }
 
 export default ContactUs

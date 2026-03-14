@@ -29,7 +29,6 @@ export default function RootLayout({ children }) {
       >
         <SmoothScroll>
           <Header />
-          <HeaderAnimation />
           {children}
           <Footer />
           <AnimateSectionTitle />

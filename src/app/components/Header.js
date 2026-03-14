@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CustomLink from "./CustomLink";
 import { useState } from "react";
+import HeaderAnimation from "./HeaderAnimation";
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const links = [
@@ -92,6 +93,7 @@ const Header = () => {
                     </nav>
                 </div>
             </div>
+            <HeaderAnimation />
         </header>
     );
 };

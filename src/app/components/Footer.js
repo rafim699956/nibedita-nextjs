@@ -6,13 +6,14 @@ import { BsTwitterX } from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import FooterAnimation from "./FooterAnimation";
 
 const Footer = () => {
     const pathname = usePathname();
     console.log(pathname);
   return (
     <footer
-      className={`${
+      className={`footer-section ${
         pathname == "/" ? "bg-primary-600" : "bg-transparent"
       } relative z-10 before:content-[""] before:absolute before:inset-0 before:bg-secondary-800 before:-z-10 before:rounded-tl-4xl lg:before:rounded-tl-[5rem] before:rounded-tr-4xl lg:before:rounded-tr-[5rem]`}
     >
@@ -21,9 +22,9 @@ const Footer = () => {
         style={{ backgroundImage: `url(${footerShape})` }}
       ></div>
       <div className="container pt-10 md:pt-16 lg:pt-24 pb-8 md:pb-12 lg:pb-17.5 flex flex-col lg:flex-row gap-8 justify-between">
-        <div className="space-y-4 md:space-y-6 lg:space-y-7.5 lg:max-w-[28.813rem]">
+        <div className="space-y-4 md:space-y-6 lg:space-y-7.5 lg:max-w-[28.813rem] footer-left">
           <div>
-            <Link href="/">
+            <Link href="/" className="inline-block">
               <Image  className="inline-block object-cover w-[8.552rem]" src={footerLogo} alt="footerlogo" width={137} height={56} />
             </Link>
           </div>
@@ -55,7 +56,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="lg:pt-7.5 flex flex-wrap gap-6">
-          <div className="space-y-4 md:space-y-6 lg:space-y-8 min-w-42.5">
+          <div className="space-y-4 md:space-y-6 lg:space-y-8 min-w-42.5 our-service">
             <h6 className="text-white">Our services</h6>
             <ul className="space-y-2 lg:space-y-4">
               <li>
@@ -80,7 +81,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="space-y-4 md:space-y-6 lg:space-y-8 min-w-42.5">
+          <div className="space-y-4 md:space-y-6 lg:space-y-8 min-w-42.5 quick-link">
             <h6 className="text-white">Quick links</h6>
             <ul className="space-y-2 lg:space-y-4">
               <li>
@@ -105,7 +106,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="space-y-4 md:space-y-6 lg:space-y-8 min-w-42.5">
+          <div className="space-y-4 md:space-y-6 lg:space-y-8 min-w-42.5 company">
             <h6 className="text-white">Company</h6>
             <ul className="space-y-2 lg:space-y-4">
               <li>
@@ -143,6 +144,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
+      <FooterAnimation />
     </footer>
   );
 };

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Image from "next/image";
 import SectionTitle from "./SectionTitle";
+import LatestBlogAnimation from "./LatestBlogAnimation";
 
 const LatestNews = () => {
   const latestNews = {
@@ -42,12 +43,12 @@ const LatestNews = () => {
     <section className="bg-[#FBF7FC]">
       <div className="container space-y-6 md:space-y-8 lg:space-y-14">
         <SectionTitle title={latestNews.sectionTitle} description={latestNews.sectionDes} />
-        <div className="grid grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-flow-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 letest-news-wrapper">
           {latestNews.news &&
             latestNews.news.map((item) => (
               <div
                 className={`flex flex-col lg:flex-row rounded-lg border border-[#E5E5E5] shadow-[0px_2px_12px_rgba(0,0,0,0.04)] overflow-hidden ${item.img && "md:col-span-2"
-                  }`}
+                  } letest-news-item`}
                 key={item.id}
               >
                 {item.img && (
@@ -63,8 +64,8 @@ const LatestNews = () => {
                 )}
                 <div
                   className={`grow ${item.img
-                      ? "bg-white pt-6 md:pt-8 lg:pt-10 pb-8 md:pb-10 lg:pb-15 pl-6 pr-7.5 space-y-8"
-                      : `py-8 md:py-10 lg:py-14 px-6 space-y-6`
+                    ? "bg-white pt-6 md:pt-8 lg:pt-10 pb-8 md:pb-10 lg:pb-15 pl-6 pr-7.5 space-y-8"
+                    : `py-8 md:py-10 lg:py-14 px-6 space-y-6`
                     }`}
                   style={{ backgroundColor: `${item.bgColor}` }}
                 >
@@ -96,6 +97,7 @@ const LatestNews = () => {
             ))}
         </div>
       </div>
+      <LatestBlogAnimation />
     </section>
   );
 };
