@@ -5,7 +5,7 @@ import Pagination from "./Pagination";
 
 const AboutNibedita = () => {
   return (
-    <section>
+    <section className="py-0">
       <div className="pt-10 pb-52 bg-linear-to-b from-[#EDDEF0] from-[66.66%] to-[#FFFFFF] to-[100.88%]">
         <div className="container space-y-6 md:space-y-10 lg:space-y-15">
           <Pagination />

@@ -1,9 +1,9 @@
 "use client";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import gsap from "gsap";
 
 const HeaderAnimation = () => {
-    useEffect(() => {
+    useLayoutEffect(() => {
         const tl = gsap.timeline({
             defaults: {
                 ease: "power4.out",

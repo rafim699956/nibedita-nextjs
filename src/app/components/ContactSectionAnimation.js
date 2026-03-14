@@ -1,11 +1,11 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const ContactSectionAnimation = () => {
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.from(".contact-form", {
             x: -40,
             opacity: 0,

@@ -2,11 +2,11 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const LatestBlogAnimation = () => {
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.from(".letest-news-item", {
             y: 50,
             opacity: 0,

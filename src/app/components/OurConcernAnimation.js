@@ -1,10 +1,10 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const OurConcernAnimation = () => {
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.utils.toArray(".our-concern-item").forEach((item) => {
             gsap.from(item, {
                 y: 80,

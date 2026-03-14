@@ -2,11 +2,11 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const FooterAnimation = () => {
-    useEffect(() => {
+    useLayoutEffect(() => {
         const tl = gsap.timeline({
             defaults: {
                 ease: "power4.out",

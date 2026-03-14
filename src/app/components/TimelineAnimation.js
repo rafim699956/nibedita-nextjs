@@ -1,11 +1,11 @@
 "use client";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const TimelineAnimation = () => {
-    useEffect(() => {
+    useLayoutEffect(() => {
         gsap.utils.toArray(".timeline-item-right").forEach((itemRight) => {
             gsap.from(itemRight, {
                 x: 50,
