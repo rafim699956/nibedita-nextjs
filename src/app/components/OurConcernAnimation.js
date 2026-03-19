@@ -13,7 +13,7 @@ const OurConcernAnimation = () => {
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: item,
-                    start: "top 80%",
+                    start: "top 70%",
                     toggleActions: "play reverse play reverse",
                     scrub: true
                 },

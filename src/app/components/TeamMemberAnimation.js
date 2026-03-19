@@ -16,7 +16,6 @@ const TeamMemberAnimation = () => {
             scrollTrigger: {
                 trigger: ".team-member-wrapper",
                 start: "top 80%",
-                end: "bottom 60%",
                 scrub: true,
             },
         });

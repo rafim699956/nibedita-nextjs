@@ -16,7 +16,7 @@ const ContactUs = () => {
     ourEmail: "uremail@email.com",
   };
   return (
-    <section className="bg-primary-600 contact-us-section">
+    <section className="bg-primary-600 contact-us-section overflow-hidden">
       <div className="lg:max-w-291! container space-y-6 md:space-y-10 lg:space-y-14">
         <SectionTitle title={ContactUs.sectionTitle} description={ContactUs.sectionDes} />
         <div className="flex flex-wrap gap-6">

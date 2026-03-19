@@ -16,7 +16,6 @@ const LatestBlogAnimation = () => {
             scrollTrigger: {
                 trigger: ".letest-news-wrapper",
                 start: "top 80%",
-                end: "bottom 60%",
                 scrub: true,
             },
         });

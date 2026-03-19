@@ -9,7 +9,7 @@ const HistoryNibedita = () => {
 
     }
     return (
-        <section className="bg-[#FBF7FC]">
+        <section className="bg-[#FBF7FC] overflow-hidden">
             <div className="container space-y-6 md:space-y-10 lg:space-y-14">
                 <SectionTitle title={HistoryNibedita.sectionTitle} description={HistoryNibedita.sectionDes} />
                 <Timeline />
