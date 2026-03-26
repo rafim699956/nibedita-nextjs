@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import Image from "next/image";
 import Link from "next/link";
 import CustomLink from "./CustomLink";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import HeaderAnimation from "./HeaderAnimation";
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,7 +58,22 @@ const Header = () => {
             path: "/career",
         },
     ];
-    console.log(isMenuOpen);
+    useEffect(() => {
+        const lenis = window.lenis;
+
+        if (isMenuOpen) {
+            document.body.style.overflow = "hidden";
+            if (lenis) lenis.stop();
+        } else {
+            document.body.style.overflow = "auto";
+            if (lenis) lenis.start();
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+            if (lenis) lenis.start();
+        };
+    }, [isMenuOpen]);
     return (
         <header className="py-5 bg-white">
             <div className="container">
@@ -72,20 +87,35 @@ const Header = () => {
                     >
                         <MdMenu className="text-2xl" />
                     </button>
+                    {isMenuOpen && (
+                        <div
+                            className="fixed inset-0 bg-black/50 z-998 lg:hidden transition-opacity duration-300"
+                            onClick={() => setIsMenuOpen(false)}
+                        ></div>
+                    )}
                     <nav
-                        className={`flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-end grow basis-full lg:basis-auto transition-all duration-300 ease-linear header-menu`}
+                        data-lenis-prevent
+                        className={`fixed top-0 left-0 h-full w-70 bg-white z-999 p-6 shadow-xl transform ${isMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"} transition-transform duration-300 ease-in-out lg:static lg:transform-none lg:flex lg:flex-row lg:items-center lg:justify-end lg:grow lg:basis-auto lg:p-0 lg:shadow-none lg:bg-transparent lg:h-auto lg:w-auto header-menu overflow-x-auto`}
                     >
-                        <ul className="flex flex-col lg:flex-row lg:items-center w-full lg:w-auto">
+                        <div className="flex justify-end lg:hidden mb-8">
+                            <button onClick={() => setIsMenuOpen(false)} className="text-2xl text-primary-600">
+                                ✕
+                            </button>
+                        </div>
+
+                        <ul className="flex flex-col lg:flex-row lg:items-center w-full lg:w-auto gap-4">
                             {links.map((link) => (
-                                <li key={link.id} className="flex items-center relative">
+                                <li key={link.id} className="flex items-center relative" onClick={() => setIsMenuOpen(false)}>
                                     <CustomLink path={link.path}>{link.label}</CustomLink>
                                 </li>
                             ))}
                         </ul>
-                        <div className="header-btn">
+
+                        <div className="header-btn mt-8 lg:mt-0 lg:ml-4">
                             <Link
-                                className="py-3 px-6 bg-primary-600 rounded-lg inline-flex items-center gap-2 text-white font-medium text-base hover:bg-secondary hover:text-primary-100 transition-all duration-300 ease-linear"
+                                className="py-3 px-6 bg-primary-600 rounded-lg inline-flex items-center gap-2 text-white font-medium text-base hover:bg-secondary hover:text-primary-100 transition-all duration-300 ease-linear w-full lg:w-auto justify-center"
                                 href="/contact-us"
+                                onClick={() => setIsMenuOpen(false)}
                             >
                                 Contact Us <FaArrowRightLong className="text-2xl" />
                             </Link>
