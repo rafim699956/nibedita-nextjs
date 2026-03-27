@@ -14,6 +14,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 // ScrollSmoother requires ScrollTrigger
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import OurCareJourney from "./components/OurCareJourney";
 
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
@@ -112,6 +113,7 @@ export default function Home() {
       <HistoryNibedita />
       <OurTeamMember />
       <LatestNews />
+      <OurCareJourney />
       <ContactUs />
     </>
   );
